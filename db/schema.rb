@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_10_231351) do
+ActiveRecord::Schema.define(version: 2022_04_10_233836) do
+
+  create_table "donors", force: :cascade do |t|
+    t.string "company_name"
+    t.string "bank_name"
+    t.integer "bank_account"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_donors_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +38,5 @@ ActiveRecord::Schema.define(version: 2022_04_10_231351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "donors", "users"
 end
