@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :donors, dependent: :destroy
+
+  validates :first_name, :last_name, :location, presence: true
+  validates :role, presence: true, inclusion: { in: %w[Donor Scholar] }
 end
