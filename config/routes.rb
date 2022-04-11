@@ -6,4 +6,12 @@ Rails.application.routes.draw do
     resources :donors, only: %i[new create edit update]
     resources :scholars, only: %i[new create edit update]
   end
+
+  donors do
+    transactions only: %i[index show new create]
+  end
+
+  scholars do
+    transactions only: %i[index show new create]
+  end
 end
