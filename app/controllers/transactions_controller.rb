@@ -14,19 +14,23 @@ class TransactionsController < ApplicationController
 
   def create
     case current_user.role
-    when 'donor'
+    when 'Donor'
     @transaction = Transaction.new(transaction_params)
     @transaction.donor = @donor
-    # @transaction.donor_id = params[:donor_id]
-    # @transaction.user = current_user
-    @transaction.save
-    redirect_to donor_transactions_path
-    when 'scholar'
+    if @transaction.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
+    when 'Scholar'
     @transaction = Transaction.new(transaction_params)
     @transaction.scholar = @scholar
-    @transaction.save
-    redirect_to donor_transactions_path
+    if @transaction.save
+      redirect_to dashboard_path
+    else
+      render :new
     end
+  end
   end
 
   def update

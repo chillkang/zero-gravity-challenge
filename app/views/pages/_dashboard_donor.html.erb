@@ -1,0 +1,29 @@
+<h2>Booking Requests:</h2>
+
+  <div class="cards-container-my-powers">
+    <% if @active_transactions.empty? %>
+      <h2 class="no-requests">You have no requests!</h2>
+    <% end %>
+      <% @active_transactions.each do |transaction| %>
+            <div class="card-product-infos">
+              <h2> <%= transaction.user.first_name %> <%= transaction.user.last_name %> wants to request <%= transaction.purpose %> !</h2>
+              <p>Amount: £<%= transaction.amount %></p>
+
+              <div class="d-flex justify-content-around">
+                <% if transaction.status == 'pending' %>
+                  <%= simple_form_for transaction do |f| %>
+                    <%= f.hidden_field :status, value: "accepted"  %>
+                    <%= f.submit 'Accept', class: 'btn btn-success' %>
+                  <% end %>
+                  <%= simple_form_for transaction do |f| %>
+                    <%= f.hidden_field :status, value: "rejected"  %>
+                    <%= f.submit 'Reject', class: 'btn btn-danger' %>
+                  <% end %>
+                <% elsif transaction.status == "rejected" %>
+                <%= link_to "delete", transaction_path(transaction), method: :delete, class: 'btn btn-danger' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>

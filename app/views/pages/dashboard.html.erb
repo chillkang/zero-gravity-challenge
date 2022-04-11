@@ -1,7 +1,8 @@
 <div class="container py-5 my-5">
-  <% if current_user.role == 'donor' %>
-    <%= render 'dashboard_donor' %>
-  <% elsif current_user.role == 'scholar' %>
-    <%= render 'dashboard_scholar' %>
+  <% if current_user.role == 'Donor' %>
+    <%= render 'donors/dashboard' %>
+  <% elsif current_user.role == 'Scholar' %>
+    <%= render 'scholars/dashboard' %>
   <% end %>
 </div>
+<h1>hee</h1>

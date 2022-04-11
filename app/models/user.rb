@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   has_one :donor, dependent: :destroy
   has_one :scholar, dependent: :destroy
+  has_many :transactions, through: :donor
+  has_many :transactions, through: :scholar
+
 
   validates :first_name, :last_name, :location, presence: true
   validates :role, presence: true, inclusion: { in: %w[Donor Scholar] }

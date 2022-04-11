@@ -1,6 +1,6 @@
 <div class="container h-100">
 
-<div class="card-scholar" data-id="<%= scholar.id %>" data-scholar-target="cards" data-action="click->scholar#toggleDisable">
+<div class="card-scholar" data-id="<%= scholar.id %>" >
   <div class="scholar-bar blue-bar d-flex align-items-center">
     <h2><%= scholar.user.first_name %> <%= scholar.user.last_name %> </h2>
   </div>
@@ -10,7 +10,7 @@
       <p><%= scholar.user.email %></p>
       <p><%= scholar.institution_name %></p>
     </div>
-    <%= link_to "More Info", new_scholar_transaction_path(scholar), class: "btn btn-primary " %>
+    <%= link_to "More Info", scholar_path(scholar), class: "btn btn-primary " %>
   </div>
 </div>
 </div>

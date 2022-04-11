@@ -25,7 +25,7 @@ class ScholarsController < ApplicationController
     @active_transactions= []
     @scholars.each do |scholar|
       scholar.transaction.each do |scholar|
-        @active_transaction << transaction
+        @active_transactions << transaction
       end
     end
   end

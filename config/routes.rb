@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :scholars, only: %i[index show edit update] do
-    resources :transactions, only: %i[index show new create]
+    resources :transactions, only: %i[new create]
   end
+
+  get '/my_payment', to: 'donors#dashboard'
+  get '/my_payment', to: 'scholars#dashboard'
+  resources :transactions, only: [:index, :show, :new, :create, :update, :destroy]
 end
