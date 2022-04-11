@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @donor = Donor.find(params[:scholar_id])
     @transaction = Transaction.new
   end
 
@@ -31,6 +31,4 @@ class TransactionsController < ApplicationController
   def transaction_params
     params.require(:transaction).permit(:purpose, :amount, :status)
   end
-end
-
 end
