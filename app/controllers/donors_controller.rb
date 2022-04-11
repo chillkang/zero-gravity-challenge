@@ -32,7 +32,7 @@ class DonorsController < ApplicationController
   end
 
   def find_donor
-    @donor = donor.find(params[:id])
+    @donor = Donor.find(params[:id])
   end
 
   def donor_params

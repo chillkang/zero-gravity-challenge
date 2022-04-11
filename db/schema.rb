@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_11_003537) do
+ActiveRecord::Schema.define(version: 2022_04_11_013450) do
 
   create_table "donors", force: :cascade do |t|
     t.string "company_name"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 2022_04_11_003537) do
     t.index ["user_id"], name: "index_scholars_on_user_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.string "purpose"
+    t.float "amount"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "donor_id"
+    t.integer "scholar_id"
+    t.index ["donor_id"], name: "index_transactions_on_donor_id"
+    t.index ["scholar_id"], name: "index_transactions_on_scholar_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -50,4 +62,6 @@ ActiveRecord::Schema.define(version: 2022_04_11_003537) do
 
   add_foreign_key "donors", "users"
   add_foreign_key "scholars", "users"
+  add_foreign_key "transactions", "donors"
+  add_foreign_key "transactions", "scholars"
 end

@@ -32,7 +32,7 @@ class ScholarsController < ApplicationController
   end
 
   def find_scholar
-    @scholar = scholar.find(params[:id])
+    @scholar = Scholar.find(params[:id])
   end
 
   def scholar_params
