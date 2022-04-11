@@ -1,3 +1,5 @@
+<div class="container h-100">
+<div class="card-scholar">
 
   <div class="scholar-bar blue-bar d-flex align-items-center">
     <h2><%= @scholar.user.first_name %> <%= @scholar.user.last_name %> </h2>
@@ -10,5 +12,4 @@
     </div>
     <%= link_to "Make Payment", new_scholar_transaction_path(@scholar), class: "btn btn-primary " %>
   </div>
-</div>
 </div>
