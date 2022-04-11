@@ -2,6 +2,10 @@ class ScholarsController < ApplicationController
   before_action :set_user, only: %i[new create]
   before_action :find_scholar, only: %i[show edit update]
 
+  def index
+    @scholars = Scholar.all
+  end
+
   def new
     @scholar = Scholar.new
   end
@@ -16,7 +20,10 @@ class ScholarsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @Transaction = Transaction.new
+  end
+
 
   def edit; end
 

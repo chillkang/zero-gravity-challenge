@@ -1,0 +1,16 @@
+<div class="card-scholar" data-id="<%= scholar.id %>" data-scholar-target="cards" data-action="click->scholar#toggleDisable">
+  <div class="scholar-bar blue-bar d-flex align-items-center">
+    <h2><%= scholar.user.first_name %> <%= scholar.user.last_name %> </h2>
+  </div>
+  <div class="scholar-card-info">
+    <div class="scholar-descripton d-flex flex-column align-items-start">
+      <p><%= scholar.user.location %></p>
+      <p><%= scholar.user.email %></p>
+    </div>
+    <div class="d-flex justify-content-between influencer-info" >
+      <div class="d-flex flex-column align-items-center">
+        <%= scholar.institution_name %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,16 +2,16 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   root to: "pages#home"
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index, :show] do
     resources :donors, only: %i[new create edit update]
     resources :scholars, only: %i[new create edit update]
   end
 
-  donors do
-    transactions only: %i[index show new create]
+  resources :donors, only: %i[index show edit update] do
+    resources :transactions, only: %i[index show new create]
   end
 
-  scholars do
-    transactions only: %i[index show new create]
+  resources :scholars, only: %i[index show edit update] do
+    resources :transactions, only: %i[index show new create]
   end
 end
