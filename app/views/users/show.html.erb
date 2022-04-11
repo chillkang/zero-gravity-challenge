@@ -21,7 +21,7 @@
           </div>
           <p><%= @user.donor.company_name %></p>
           <p><%= @user.donor.bank_name %></p>
-          <p><%= @user.donor.bank_account %></p>
+          <p><%= @user.donor.bank_account.to_i %></p>
 
           <%= link_to "Edit", edit_user_donor_path(current_user.donor.id), class: "btn btn-primary" %>
         </div>
