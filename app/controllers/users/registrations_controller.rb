@@ -18,8 +18,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if resource.save!
       if resource.role == "Donor"
         new_user_donor_path(resource)
-      # elsif resource.role == "Scholar"
-      #   new_user_business_path(resource)
+      elsif resource.role == "Scholar"
+        new_user_scholar_path(resource)
       end
     else
       render :new
