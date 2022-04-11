@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <h1 class="mt-5 mb-0">Profile</h1>
+  <% if current_user.donor %>
+    <div class="d-flex flex-column align-items-center">
+      <h3 class="mt-4"><%= @user.first_name %> <%= @user.last_name %></h3>
+
+      <div class="profile-description d-flex">
+        <div class="information-card">
+          <div class="blue-bar">
+            <h4>Personal Information</h4>
+          </div>
+          <p><%= @user.role %></p>
+          <p><%= @user.email %></p>
+          <p><%= @user.location.capitalize %></p>
+          <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
+        </div>
+
+        <div class="information-card">
+          <div class="blue-bar">
+            <h4>Your donor profile</h4>
+          </div>
+          <p><%= @user.donor.company_name %></p>
+          <p><%= @user.donor.bank_name %></p>
+          <p><%= @user.donor.bank_account %></p>
+
+          <%= link_to "Edit", edit_user_donor_path(current_user.donor.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+  <% elsif current_user.scholar %>
+      <div class="d-flex flex-column align-items-center">
+      <h3 class="mt-4"><%= @user.first_name %> <%= @user.last_name %></h3>
+
+        <div class="profile-description d-flex">
+          <div class="information-card">
+            <div class="blue-bar">
+              <h4>Personal Information</h4>
+            </div>
+            <p><%= @user.role %></p>
+            <p><%= @user.email %></p>
+            <p><%= @user.location.capitalize %></p>
+            <%= link_to "Edit", edit_user_scholar_path(current_user.scholar.id), class: "btn btn-primary" %>
+            </div>
+
+          <div class="information-card">
+            <div class="blue-bar">
+              <h4>Your scholar profile</h4>
+            </div>
+            <p><%= @user.scholar.institution_name %></p>
+            <p><%= @user.scholar.bank_name %></p>
+            <p><%= @user.scholar.bank_account.to_i %></p>
+            <%= link_to "Edit", edit_user_scholar_path(current_user.scholar.id), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+</div>

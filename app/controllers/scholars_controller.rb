@@ -39,5 +39,3 @@ class ScholarsController < ApplicationController
     params.require(:scholar).permit(:institution_name, :bank_name, :bank_account)
   end
 end
-
-end
