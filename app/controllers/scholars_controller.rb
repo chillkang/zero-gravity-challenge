@@ -20,6 +20,16 @@ class ScholarsController < ApplicationController
     end
   end
 
+  def dashboard
+    @scholars = current_user.scholars
+    @active_transactions= []
+    @scholars.each do |scholar|
+      scholar.transaction.each do |scholar|
+        @active_transaction << transaction
+      end
+    end
+  end
+
   def show
     @Transaction = Transaction.new
   end

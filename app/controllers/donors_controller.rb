@@ -16,6 +16,16 @@ class DonorsController < ApplicationController
     end
   end
 
+  def dashboard
+    @donors = current_user.donors
+    @active_transactions= []
+    @donors.each do |donor|
+      donor.transaction.each do |donor|
+        @active_transaction << transaction
+      end
+    end
+  end
+
   def show; end
 
   def edit; end
