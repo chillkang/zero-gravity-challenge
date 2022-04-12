@@ -1,27 +1,23 @@
-<h2>Transaction Requests:</h2>
-
-  <div class="cards-container-my-powers">
-
-      <% @active_transactions.each do |transaction| %>
-            <div class="card-product-infos">
-              <h2> <%= transaction.scholar.first_name %> <%= transaction.scholar.last_name %> wants to request <%= transaction.purpose %> !</h2>
-              <p>Amount: £<%= transaction.amount %></p>
-
-              <div class="d-flex justify-content-around">
-                <% if transaction.status == 'pending' %>
-                  <%= simple_form_for transaction do |f| %>
-                    <%= f.hidden_field :status, value: "accepted"  %>
-                    <%= f.submit 'Accept', class: 'btn btn-success' %>
-                  <% end %>
-                  <%= simple_form_for transaction do |f| %>
-                    <%= f.hidden_field :status, value: "rejected"  %>
-                    <%= f.submit 'Reject', class: 'btn btn-danger' %>
-                  <% end %>
-                <% elsif transaction.status == "rejected" %>
-                <%= link_to "delete", transaction_path(transaction), method: :delete, class: 'btn btn-danger' %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+<div class="container h-100">
+<div class="card-scholar">
+  <div class="scholar-bar blue-bar d-flex align-items-center">
+    <h4>Transaction History:</h4>
+  </div>
+  <div class="scholar-card-info">
+    <div class="scholar-descripton d-flex flex-column align-items-start">
+      <p>You received £ 100 contribution fee from Seulkee Kang. </p>
     </div>
+  </div>
+</div>
+<div class="card-scholar">
+  <div class="scholar-bar blue-bar d-flex align-items-center">
+    <h4>Your Payment:</h4>
+  </div>
+  <div class="scholar-card-info">
+    <div class="scholar-descripton d-flex flex-column align-items-start">
+      <p>You sent £ 1000 donation to Jenny Kang. </p>
+    </div>
+  </div>
+</div>
+
+</div>

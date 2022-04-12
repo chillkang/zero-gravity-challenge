@@ -17,10 +17,10 @@ class DonorsController < ApplicationController
   end
 
   def dashboard
-    @scholars = current_user.scholars
+    @donors = current_user.donors
     @active_transactions = []
-    @scholars.each do |scholar|
-      scholar.transactions.each do |scholar|
+    @donors.each do |donor|
+      donor.transactions.each do |donor|
         @active_transactions << transaction
       end
     end

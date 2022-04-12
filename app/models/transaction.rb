@@ -1,6 +1,6 @@
 class Transaction < ApplicationRecord
-  belongs_to :donor
-  belongs_to :scholar
+  belongs_to :donor, optional: true
+  belongs_to :scholar, optional: true
 
   validates :purpose, :amount, presence: true
 end
