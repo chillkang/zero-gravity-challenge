@@ -22,7 +22,6 @@
           <p><%= @user.donor.company_name %></p>
           <p><%= @user.donor.bank_name %></p>
           <p><%= @user.donor.bank_account.to_i %></p>
-
           <%= link_to "Edit", edit_user_donor_path(current_user.donor.id), class: "btn btn-primary" %>
         </div>
       </div>
@@ -31,7 +30,6 @@
   <% elsif current_user.scholar %>
       <div class="d-flex flex-column align-items-center">
       <h3 class="mt-4"><%= @user.first_name %> <%= @user.last_name %></h3>
-
         <div class="profile-description d-flex">
           <div class="information-card">
             <div class="blue-bar">
@@ -54,6 +52,5 @@
           </div>
         </div>
       </div>
-
   <% end %>
 </div>

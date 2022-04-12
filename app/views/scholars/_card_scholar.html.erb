@@ -1,16 +1,15 @@
 <div class="container h-100">
-
-<div class="card-scholar">
-  <div class="scholar-bar blue-bar d-flex align-items-center">
-    <h2><%= scholar.user.first_name %> <%= scholar.user.last_name %> </h2>
-  </div>
-  <div class="scholar-card-info">
-    <div class="scholar-descripton d-flex flex-column align-items-start">
-      <p><%= scholar.user.location %></p>
-      <p><%= scholar.user.email %></p>
-      <p><%= scholar.institution_name %></p>
+  <div class="card-scholar">
+    <div class="scholar-bar blue-bar d-flex align-items-center">
+      <h2><%= scholar.user.first_name %> <%= scholar.user.last_name %> </h2>
     </div>
-    <%= link_to "More Info", scholar_path(scholar), class: "btn btn-primary " %>
+    <div class="scholar-card-info">
+      <div class="scholar-descripton d-flex flex-column align-items-start">
+        <p><%= scholar.user.location %></p>
+        <p><%= scholar.user.email %></p>
+        <p><%= scholar.institution_name %></p>
+      </div>
+      <%= link_to "More Info", scholar_path(scholar), class: "btn btn-primary " %>
+    </div>
   </div>
-</div>
 </div>
