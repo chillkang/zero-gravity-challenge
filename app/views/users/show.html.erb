@@ -9,9 +9,9 @@
           <div class="blue-bar">
             <h4>Personal Information</h4>
           </div>
-          <p><%= @user.role %></p>
-          <p><%= @user.email %></p>
-          <p><%= @user.location.capitalize %></p>
+          <p>Role: <%= @user.role %></p>
+          <p>Email: <%= @user.email %></p>
+          <p>Location: <%= @user.location.capitalize %></p>
           <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
         </div>
 
@@ -19,9 +19,9 @@
           <div class="blue-bar">
             <h4>Your donor profile</h4>
           </div>
-          <p><%= @user.donor.company_name %></p>
-          <p><%= @user.donor.bank_name %></p>
-          <p><%= @user.donor.bank_account.to_i %></p>
+          <p>Company Name: <%= @user.donor.company_name %></p>
+          <p>Bank: <%= @user.donor.bank_name %></p>
+          <p>Account: <%= @user.donor.bank_account.to_i %></p>
           <%= link_to "Edit", edit_user_donor_path(current_user.donor.id), class: "btn btn-primary" %>
         </div>
       </div>
@@ -35,9 +35,9 @@
             <div class="blue-bar">
               <h4>Personal Information</h4>
             </div>
-            <p><%= @user.role %></p>
-            <p><%= @user.email %></p>
-            <p><%= @user.location.capitalize %></p>
+            <p>Role: <%= @user.role %></p>
+            <p>Email: <%= @user.email %></p>
+            <p>Location: <%= @user.location.capitalize %></p>
             <%= link_to "Edit", edit_user_scholar_path(current_user.scholar.id), class: "btn btn-primary" %>
             </div>
 
@@ -45,9 +45,9 @@
             <div class="blue-bar">
               <h4>Your scholar profile</h4>
             </div>
-            <p><%= @user.scholar.institution_name %></p>
-            <p><%= @user.scholar.bank_name %></p>
-            <p><%= @user.scholar.bank_account.to_i %></p>
+            <p>Institution Name: <%= @user.scholar.institution_name %></p>
+            <p>Bank: <%= @user.scholar.bank_name %></p>
+            <p>Account: <%= @user.scholar.bank_account.to_i %></p>
             <%= link_to "Edit", edit_user_scholar_path(current_user.scholar.id), class: "btn btn-primary" %>
           </div>
         </div>

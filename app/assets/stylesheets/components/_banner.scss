@@ -2,8 +2,19 @@
   // background-image: url('TODO: A picture URL from unsplash.com!');
   background-size: cover;
   background-color: #14FAD7;
-  height: 85vh;
-  color: black;
+  height: 75vh;
+  color: white;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 5vh;
+  h1 {
+    text-shadow: -1px 0 #043E9B, 0 1px #043E9B, 1px 0 #043E9B, 0 -1px #043E9B;
+    font-size: 60px;
+    font-weight: 600;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding-bottom: 1%;
+  }
 }
