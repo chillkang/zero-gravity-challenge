@@ -3,7 +3,7 @@
 This is a Rails app for Fund & Finance Platform.
 
 # Features:
-* Donor and Scholar proflies
+* Donor and Scholar profiles
 * Dashboard for transaction and payment history 
 * View page for finding scholars and making payment
 
