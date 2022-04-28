@@ -1,6 +1,6 @@
 # Description:
 
-This is a Rails app for Zero Gravity Fund Finance Platform.
+This is a Rails app for Fund & Finance Platform.
 
 # Features:
 * Donor and Scholar proflies
